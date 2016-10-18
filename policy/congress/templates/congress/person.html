@@ -1,0 +1,3 @@
+{% for chunk in query %}
+<p><strong>Voted: {{ chunk.option.value }}</strong> on {{ chunk.vote.question }}</p>
+{% endfor %}

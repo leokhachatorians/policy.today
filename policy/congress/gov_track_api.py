@@ -27,21 +27,3 @@ class GovTrack(object):
     def vote_voter(self, **kwargs):
         return self._call("vote_voter", **kwargs)
 
-
-#c = GovTrack()
-#bill = c.vote_voter(limit=441, vote=118802)
-
-#for i in bill['objects']:
-#    firstname = i['person']['firstname']
-#    lastname = i['person']['lastname']
-#    voted = i['option']['value']
-#    print("{} {} voted <{}>".format(
-#        firstname, lastname, voted))
-
-#bills = c.vote_voter(limit='120', person=400047, order_by='-created')
-
-#for i in bills['objects']:
-#    print("Voted:", i['option']['value'])
-#    print("Bill:",  i['vote']['question'])
-#    print("Bill ID:", i['vote']['id'])
-#    break

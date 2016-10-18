@@ -1,0 +1,5 @@
+<h1>You clicked on {{ state }}</h1>
+
+{% for congress_person in queryset %}
+<a href="/member/{{ congress_person.govtrack_id }}"><h3><strong>{{ congress_person.title }}:</strong> {{ congress_person.firstname }} {{ congress_person.lastname }}</h3></a>
+{% endfor %}
