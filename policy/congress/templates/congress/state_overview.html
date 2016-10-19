@@ -1,0 +1,20 @@
+{% extends 'congress/base.html' %}
+{% block content %}
+
+<h1>You clicked on {{ state }}</h1>
+
+{% for congress_person in queryset %}
+<a href="/member/{{ congress_person.govtrack_id }}">
+  <img src="https://www.govtrack.us/data/photos/{{ congress_person.govtrack_id }}-200px.jpeg"></img>
+  {% if congress_person.party == "Democrat" %}
+  <h3 class="democrat">
+  {% elif congress_person.party == "Republican" %}
+    <h3 class="republican">
+  {% else %}
+    <h3 class="independant">
+  {% endif %}
+      <strong>{{ congress_person.title }}:</strong> {{ congress_person.firstname }} {{ congress_person.lastname }} ({{ congress_person.party }})
+    </h3>
+</a>
+{% endfor %}
+{% endblock %}

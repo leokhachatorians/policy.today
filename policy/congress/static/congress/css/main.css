@@ -1,13 +1,28 @@
 .democrat {
-	background-color: #a7a2ef;
 	background-color: #179ee0;
 }
 
 .republican {
-	background-color: #eb928b;
 	background-color: #ff5d40;
 }
 
 .independant {
 	background-color: #f8ca40;
+}
+
+.success {
+	background-color: #d0f7d3;
+}
+
+.failure {
+	background-color: #f7d3d0;
+}
+
+.not-voting {
+	background-color: #cccccc;
+}
+
+.map {
+	position: relative;
+	margin: 0 auto;
 }

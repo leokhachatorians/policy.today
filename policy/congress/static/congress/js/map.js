@@ -12,3 +12,5 @@ var map = new Datamap({
 window.addEventListener('resize', function() {
 	map.resize();
 });
+
+map.labels();
