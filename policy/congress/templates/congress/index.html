@@ -1,31 +1,4 @@
-{% load staticfiles %}
-<html>
-  <body>
-    <div id="container" style="position: relative;"></div>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="{% static 'congress/js/datamaps.usa.min.js' %}"></script>
-    <script src="{% static 'congress/js/jquery-3.1.0.min.js' %}"></script>
-    <script>
-      var map = new Datamap({
-        element: document.getElementById('container'),
-        scope: 'usa',
-        responsive: true,
-        done: function(datamap) {
-          datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-            //alert(geography.id);
-            window.location.href = "/state/" + geography.id;
-          });
-        }
-      });
-      window.addEventListener('resize', function() {
-        map.resize();
-      });
-
-    $('#container').on('map-click', function(event, data) {
-      alert(data.geography.id);
-    });
-  
-  
-    </script>
-</html>
+{% extends 'congress/base.html' %}
+{% block content %}
+<div id="container" style="position: relative;"></div>
+{% endblock %}

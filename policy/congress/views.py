@@ -10,5 +10,5 @@ def state(request, state, template='congress/state.html'):
 
 def congress_person(request, govtrack_id, template='congress/person.html'):
     api = gov_track_api.GovTrack()
-    query = api.vote_voter(limit='120', person=govtrack_id, order_by='-created')['objects']
+    query = api.vote_voter(limit='30', person=govtrack_id, order_by='-created')['objects']
     return render(request, template, {'query':query})
