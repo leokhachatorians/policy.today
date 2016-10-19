@@ -2,7 +2,9 @@ import json
 import os
 import requests
 from django.http import HttpResponse
-from django.shortcuts import render, get_list_or_404, redirect
+from django.shortcuts import (
+        render, get_list_or_404, redirect,
+        get_object_or_404)
 from . import models, gov_track_api
 
 def index(request, template='congress/index.html'):
@@ -23,7 +25,10 @@ def ajax_locate_district(request):
     return HttpResponse(json.dumps(r.json()['results'][0]), content_type="application/json")
 
 def my_district(request, state, district, template="congress/my_district.html"):
-    return render(request)
+    senators = get_list_or_404(models.CongressPerson, state=state, title="Senator")
+    rep = get_object_or_404(models.CongressPerson, state=state, district=district)
+    return render(request, template, {
+        "senators":senators, "rep":rep})
 
 def congress_person(request, govtrack_id, template='congress/person.html'):
     api = gov_track_api.GovTrack()

@@ -17,7 +17,8 @@ function got_location(pos) {
 		async: true,
 		
 		success: function(data) {
-			alert(data.state + " " + data.district);
+			var redirect_url = "/my_district/" + data.state + "/" + data.district;
+			window.location.href = redirect_url;
 		},
 		error: function() {
 			alert("didnt work");
