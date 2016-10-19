@@ -1,3 +1,6 @@
+body {
+	background-color: #f2f2f2;
+}
 .democrat {
 	background-color: #179ee0;
 }
@@ -22,7 +25,15 @@
 	background-color: #cccccc;
 }
 
-.map {
-	position: relative;
-	margin: 0 auto;
+.navbar-policytoday {
+	background-color: #FFF;
+	border-color: #5FB0E4;
+	border-radius: 0;
+	margin-bottom: 0;
+	z-index: 100;
+}
+
+.navbar-brand--policytoday {
+	color: #5FB0E4;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
