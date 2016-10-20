@@ -33,7 +33,7 @@ def my_district(request, state, district, template="congress/my_district.html"):
     return render(request, template, {
         "senators":senators, "rep":rep})
 
-def congress_person(request, govtrack_id, template='congress/person.html'):
+def voting_record(request, govtrack_id, template='congress/voting_record.html'):
     api = gov_track_api.GovTrack()
     query = api.vote_voter(limit='30', person=govtrack_id, order_by='-created')['objects']
     return render(request, template, {'query':query})
