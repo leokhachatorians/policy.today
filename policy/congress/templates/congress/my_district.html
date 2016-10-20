@@ -1,13 +1,16 @@
 {% extends 'congress/base.html' %}
 {% block content %}
+<h1>Your Senators</h1>
 {% for senator in senators %}
   <a href="/member/{{ senator.govtrack_id }}">
     <img src="https://www.govtrack.us/data/photos/{{ senator.govtrack_id }}-200px.jpeg"></img>
     <h3>{{ senator.firstname }} {{ senator.lastname }} ({{ senator.party }})</h3>
   </a>
 {% endfor %}
+<h1>Your Congressional Representative<h1>
   <a href="/member/{{ rep.govtrack_id }}">
     <img src="https://www.govtrack.us/data/photos/{{ rep.govtrack_id }}-200px.jpeg"></img>
     <h3>{{ rep.firstname }} {{ rep.lastname }} ({{ rep.party }})</h3>
   </a>
+<h1>Your State Representative</h1>
 {% endblock %}

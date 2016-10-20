@@ -33,7 +33,11 @@ body {
 	z-index: 100;
 }
 
-.navbar-brand--policytoday {
+.navbar-brand-policytoday {
 	color: #5FB0E4;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#homepage h1, h2 {
+	text-align: center;
 }
