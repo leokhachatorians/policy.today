@@ -36,4 +36,9 @@ def my_district(request, state, district, template="congress/my_district.html"):
 def voting_record(request, govtrack_id, template='congress/voting_record.html'):
     api = gov_track_api.GovTrack()
     query = api.vote_voter(limit='30', person=govtrack_id, order_by='-created')['objects']
-    return render(request, template, {'query':query})
+    print(query)
+    name = "{} {} {}".format(
+            query[0]['person_role']['role_type_label'],
+            query[0]['person']['firstname'],
+            query[0]['person']['lastname'])
+    return render(request, template, {'query':query, "name":name, "id":govtrack_id})

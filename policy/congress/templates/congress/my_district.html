@@ -4,10 +4,12 @@
 {% for senator in senators %}
   <h3>{{ senator.firstname }} {{ senator.lastname }} ({{ senator.party }})</h3>
   <div class="row info-row">
+
     <div class="col-xs-12 col-sm-3">
       <img src="https://www.govtrack.us/data/photos/{{ senator.govtrack_id }}-200px.jpeg"></img>
       <a href="/member/{{ senator.govtrack_id }}"></a>
     </div>
+
     <div class="col-xs-12 col-sm-9">
       <div class="row">
         <a href="/voting_record/{{ senator.govtrack_id }}"><p>Voting Record</p></a>
@@ -19,26 +21,32 @@
         <p>{{ senator.fax }}</p>
       </div>
     </div>
+
   </div>
 {% endfor %}
+
 <h1>Your Congressional Representative<h1>
-  <h3>{{ rep.firstname }} {{ rep.lastname }} ({{ rep.party }})</h3>
-  <div class="row info-row">
-    <div class="col-xs-12 col-sm-3">
-      <img src="https://www.govtrack.us/data/photos/{{ rep.govtrack_id }}-200px.jpeg"></img>
-      <a href="/voting_record/{{ rep.govtrack_id }}"></a>
-    </div>
-    <div class="col-xs-12 col-sm-9">
-      <div class="row">
-        <a href="/member/{{ rep.govtrack_id }}"><p>Voting Record</p></a>
-        <p>Bill Sponsorship</p>
-        <p>{{ rep.twitter }}</p>
-        <p>{{ rep.youtube }}</p>
-        <a href="{{ rep.website }}"><p>{{ rep.website }}</p></a>
-        <p>{{ rep.address }}</p>
-        <p>{{ rep.fax }}</p>
-      </div>
+<h3>{{ rep.firstname }} {{ rep.lastname }} ({{ rep.party }})</h3>
+<div class="row info-row">
+
+  <div class="col-xs-12 col-sm-3">
+    <img src="https://www.govtrack.us/data/photos/{{ rep.govtrack_id }}-200px.jpeg"></img>
+    <a href="/voting_record/{{ rep.govtrack_id }}"></a>
+  </div>
+
+  <div class="col-xs-12 col-sm-9">
+    <div class="row">
+      <a href="/voting_record/{{ rep.govtrack_id }}"><p>Voting Record</p></a>
+      <p>Bill Sponsorship</p>
+      <p>{{ rep.twitter }}</p>
+      <p>{{ rep.youtube }}</p>
+      <a href="{{ rep.website }}"><p>{{ rep.website }}</p></a>
+      <p>{{ rep.address }}</p>
+      <p>{{ rep.fax }}</p>
     </div>
   </div>
+
+</div>
+
 <h1>Your State Representative</h1>
 {% endblock %}
